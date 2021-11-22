@@ -22,12 +22,20 @@ public class Lab2{
             System.out.println("Неверное значение");
             return;
         }
-        BigInteger degree = BigInteger.valueOf(1);
+        BigInteger degree1 = BigInteger.valueOf(1);
         for(int i = 1; i <= n; i++){
             BigInteger mult = BigInteger.valueOf(x);
-            degree = degree.multiply(mult);
+            degree1 = degree1.multiply(mult);
         }
-        System.out.println("x в степени n = " + degree.toString());
+        BigInteger degree2 = BigInteger.valueOf(1);
+        while(n > 0){
+            BigInteger mult = BigInteger.valueOf(x);
+            degree2 = degree2.multiply(mult);
+            n--;
+        }
+        System.out.println("x в степени n = " + degree1.toString());
+        System.out.println("x в степени n = " + degree2.toString());
         a.close();
+        b.close();
     }
 }
